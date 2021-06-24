@@ -18,10 +18,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-body {
   font-size: 16px;
 }
+
 input[type='text'] {
   font-size: inherit;
 }
@@ -29,8 +28,11 @@ input,
 button {
   border: 2px greenyellow solid;
   padding: 10px;
-  color: #555;
+  color: rgb(110, 108, 108);
   margin-bottom: 20px;
+}
+button {
+  font-size: 16px;
 }
 textarea:focus,
 input:focus {

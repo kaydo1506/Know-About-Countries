@@ -199,6 +199,6 @@ button:hover {
     padding: 1rem 0 1rem 2rem;
   }
   .neighbour::before {
-    top: -6rem;
+    top: -5rem;
   }
 }

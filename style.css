@@ -201,4 +201,8 @@ button:hover {
   .neighbour::before {
     top: -5rem;
   }
+  .country__name {
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+  }
 }

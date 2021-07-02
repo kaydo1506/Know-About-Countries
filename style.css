@@ -85,6 +85,10 @@ button:hover {
 .neighbour {
   transform: scale(0.8) translateY(1rem);
   margin-left: 0;
+  -webkit-transform: scale(0.8) translateY(1rem);
+  -moz-transform: scale(0.8) translateY(1rem);
+  -ms-transform: scale(0.8) translateY(1rem);
+  -o-transform: scale(0.8) translateY(1rem);
 }
 
 .country__img {
@@ -156,4 +160,45 @@ button:hover {
   margin: 2rem;
   border: 3rem solid white;
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 600px) {
+  /*Big smartphones [426px -> 600px]*/
+  .country {
+    font-size: 1.3rem;
+    width: 22rem;
+
+    margin: 0 0rem;
+    /* overflow: hidden; */
+  }
+  .country__img {
+    width: 22rem;
+    height: 13rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  html {
+    font-size: 50.5%;
+    box-sizing: border-box;
+  }
+  .country {
+    width: 19rem;
+
+    margin: 0 1rem;
+    /* overflow: hidden; */
+  }
+  .country__img {
+    width: 19rem;
+    height: 10rem;
+  }
+
+  .country__row span {
+    margin-right: 1.5rem;
+  }
+  .country__data {
+    padding: 1rem 0 1rem 2rem;
+  }
+  .neighbour::before {
+    top: -6rem;
+  }
 }

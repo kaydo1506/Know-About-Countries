@@ -178,7 +178,7 @@ button:hover {
 @media only screen and (max-width: 425px) {
   /*Small smartphones [325px -> 425px]*/
   html {
-    font-size: 50.5%;
+    font-size: 55.5%;
     box-sizing: border-box;
   }
   .country {

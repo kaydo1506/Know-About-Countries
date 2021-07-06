@@ -37,24 +37,36 @@ function getInputValue() {
   var inputVal = document.getElementById('myInput').value;
 
   fetch(`https://restcountries.eu/rest/v2/name/${inputVal}`)
+  // first response
     .then(response => {
+      if (!response.ok) {
+        throw new Error(`Country not found`);
+      }
       return response.json();
     })
     .then(data => {
       renderCountry(data[0]);
 
       const neighbour = data[0].borders[0];
-      if (!neighbour) return;
+      if (!neighbour) throw new Error('Country has no neighbour');
 
       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
     })
+
+    // Second response
     .then(response2 => {
       return response2.json();
     })
     .then(data2 => {
       renderCountry(data2, 'neighbour');
     })
-    .catch(err => renderError(`Something went wrong 🚨. Try again`))
+
+    // Catching thrown errors
+    .catch(err =>
+      renderError(`Something went wrong 🚨 ${err.message}. Try again`)
+    )
+
+    // Forcing something to happen regardless of the response received
     .finally(() => {
       countriesContainer.style.opacity = 1;
     });
